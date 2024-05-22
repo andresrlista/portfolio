@@ -1,0 +1,9 @@
+---
+import type { Code } from 'astro:components';
+import { TIMELINE_DATA_EXPERIENCE } from '../data/timeline_data.js';
+import TimeLineItem from './TimeLineItem.astro';
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700'>
+  {TIMELINE_DATA_EXPERIENCE.map(experience => <TimeLineItem {...experience} />)}
+</ol>

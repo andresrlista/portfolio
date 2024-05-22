@@ -1,0 +1,58 @@
+---
+// components
+import ContainerSection from '../../components/ContainerSection.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import Divider from '../../components/Divider.astro';
+
+// images
+import tdbimLogo from '../../assets/images/tdbim_logo.png';
+import ceybaLogo from '../../assets/images/logo-image.png';
+import p4uLogo from '../../assets/images/p4u-logo.png';
+
+interface Props {
+  class?: string;
+  title?: string;
+}
+
+const { class: className }: Props = Astro.props;
+---
+
+<ContainerSection class={className}>
+  <span>
+    <ProjectCard
+      title='TDBIM Solutions LLC'
+      description='Residential - Commercial Engineering and Permitting Services.'
+      image={tdbimLogo}
+      linkLabel='Visit TDBIM Solutions LLC'
+      link='https://tdbimsolutions.com'
+    />
+  </span>
+  <span>
+    <ProjectCard
+      title='Report Tool for Patients4You LLC'
+      description='P4U – digital marketing report tool for dentristy clinics.'
+      image={p4uLogo}
+      linkLabel='Visit Patients4You LLC'
+      link='https://app.patients4you.com'
+    />
+  </span>
+  <span>
+    <ProjectCard
+      title='CEYBA LLC'
+      description='SEO in Puerto Rico, Digital Marketing, Web Design, and Development'
+      image={ceybaLogo}
+      linkLabel='Visit Ceyba'
+      link='https://app.ceyba.io'
+    />
+  </span>
+
+  <span>
+    <ProjectCard
+      title='CEYBA LLC'
+      description='CEYBA – SEO in Puerto Rico, Digital Marketing, Web Design, and Development'
+      image={ceybaLogo}
+      linkLabel='Visit Ceyba'
+      link='https://app.ceyba.io'
+    />
+  </span>
+</ContainerSection>

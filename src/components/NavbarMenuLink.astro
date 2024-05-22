@@ -1,0 +1,18 @@
+---
+interface Props {
+  label: string;
+  href: string;
+}
+const { label, href }: Props = Astro.props;
+---
+
+<a href={href} class='text-gray-300 hover:text-orange-200 group transition'>
+  <div class='px-4 p-2 links-underline group transition duration-300'>
+    {label}
+
+    <span
+      class='block max-w-0 group-hover:max-w-full transition-all duration-200 h-0.5 bg-sky-600 shadow-sm'
+    >
+    </span>
+  </div>
+</a>

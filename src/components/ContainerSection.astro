@@ -1,0 +1,13 @@
+---
+import Divider from './Divider.astro';
+
+interface Props {
+  class?: string;
+  id?: String;
+}
+const { class: className, id } = Astro.props;
+---
+
+<section id={`${id}`} class={`min-h-[100vh] ${className}`}>
+  <slot />
+</section>

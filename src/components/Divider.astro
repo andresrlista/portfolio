@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  title?: string;
+  class?: string;
+}
+
+const {
+  class: className,
+  title = 'Divider title',
+  id = '#',
+}: Props = Astro.props;
+---
+
+<div
+  id={id}
+  class={`grid grid-cols-3 w-full justify-center items-center ${className}`}
+>
+  <hr class='border-2 border-zinc-600 opacity-50' />
+  <h1
+    class={`text-2xl font-medium 
+    leading-none tracking-tight text-gray-900 
+    md:text-4xl lg:text-4xl dark:text-gray-50 text-center opacity-85`}
+  >
+    {title}
+  </h1>
+  <hr class='border-2 border-zinc-600 opacity-50' />
+</div>

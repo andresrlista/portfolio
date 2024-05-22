@@ -1,0 +1,11 @@
+---
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href }: Props = Astro.props;
+---
+
+<a href={href} id='button' class='bg-purple-600 px-4 py-2 rounded-lg'>{label}</a
+>

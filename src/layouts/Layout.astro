@@ -1,0 +1,54 @@
+---
+import Container from '../components/Container.astro';
+import Navbar from '../components/Navbar.astro';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Andres Portfolio' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'
+      rel='stylesheet'
+    />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <header>
+      <Navbar />
+    </header>
+    <main class='grid place-items-center p-8 min-h-screen h-full'>
+      <slot />
+
+      <style is:global>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          font-family: 'Lato', 'Courier New', Courier, monospace;
+          background: #13151a;
+          color-scheme: dark light;
+          @apply text-sm bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))];
+          scroll-behavior: smooth;
+        }
+      </style>
+    </main>
+  </body>
+</html>

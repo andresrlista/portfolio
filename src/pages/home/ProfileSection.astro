@@ -1,0 +1,128 @@
+---
+import profilePhoto from '../../assets/images/profile_photo.jpeg';
+
+// logos
+import NodeLogo from '../../assets/images/node-logo.astro';
+import AstroLogo from '../../assets/images/astro-logo.astro';
+import MYSQLLogo from '../../assets/images/mysql-logo.astro';
+import MongoDBLogo from '../../assets/images/mongodb-logo.astro';
+import MUIlogo from '../../assets/images/material-ui-logo.astro';
+import FirebaseLogo from '../../assets/images/firebase-logo.astro';
+import AWSLogo from '../../assets/images/aws-logo.astro';
+import GitHubLogo from '../../assets/images/github-mark.astro';
+import LinkedInLogo from '../../assets/images/linkedin-logo.astro';
+import ReactLogo from '../../assets/images/react-logo.astro';
+import MailIcon from '../../assets/images/mail-icon.astro';
+
+// components
+import ContainerSection from '../../components/ContainerSection.astro';
+import Divider from '../../components/Divider.astro';
+import Badge from '../../components/Badge.astro';
+
+interface Props {
+  id?: string;
+  title?: string;
+  class?: string;
+}
+const { id: containerSectionId, class: className, title } = Astro.props;
+---
+
+<ContainerSection id={containerSectionId} class={className}>
+  <aside
+    class={`flex flex-col 
+    justify-center content-center 
+    `}
+  >
+    <div class='flex justify-center items-center flex-col'>
+      <picture class='mt-24 sm:mt-24'>
+        <img
+          src={profilePhoto.src}
+          alt='Andres Lista Profile Photo'
+          class='rounded-full size-64'
+        />
+      </picture>
+      <h1
+        class='text-gray text-4xl mt-8 tracking-wide font-extrabold [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)]'
+      >
+        Andrés Lista
+      </h1>
+      <h5
+        class='text-gray text-lg [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)] opacity-70'
+      >
+        Web Developer
+      </h5>
+      <div
+        class='flex justify-center flex-row align-middle gap-6 sm:gap-6 md:gap-6 mt-4'
+      >
+        <Badge label='GitHub'>
+          <GitHubLogo slot='icon' />
+        </Badge>
+        <Badge label='LinkedIn'>
+          <LinkedInLogo slot='icon' />
+        </Badge>
+        <Badge label='andresrlista@anlisoft.dev'>
+          <MailIcon slot='icon' />
+        </Badge>
+      </div>
+    </div>
+  </aside>
+
+  <aside class='flex justify-center flex-col'>
+    <main>
+      <Divider title={title} class='mb-8 w-full' />
+      <div class='flex flex-col justify-center items-center my-4'>
+        <p
+          class={`drop-shadow-lg 
+            [text-shadow:_0_-1px_6px_rgb(0_0_0_/_80%)] 
+            text-left text-gray-500 dark:text-gray-300
+            leading-relaxed text-md sm:text-lg md:text-lg lg:text-lg min-w-1/2 max-w-xl`}
+        >
+          +5 years of experience in web development. <span
+            class='text-orange-300 font-bold'
+            >Passionate about crafting efficient and user-friendly solutions to
+            complex technical challenges.
+          </span>
+          Ready to leverage expertise to drive innovation and success in your team.
+        </p>
+      </div>
+
+      <div
+        class={`grid grid-cols-2
+        xs:grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 
+        place-items-center max-w-4xl`}
+      >
+        <picture>
+          <ReactLogo />
+        </picture>
+        <picture>
+          <NodeLogo />
+        </picture>
+        <picture>
+          <MUIlogo />
+        </picture>
+        <picture>
+          <AstroLogo />
+        </picture>
+      </div>
+
+      <div
+        class={`grid grid-cols-2
+        xs:grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 
+        place-items-center max-w-4xl`}
+      >
+        <picture>
+          <MYSQLLogo />
+        </picture>
+        <picture>
+          <MongoDBLogo />
+        </picture>
+        <picture>
+          <AWSLogo />
+        </picture>
+        <picture>
+          <FirebaseLogo />
+        </picture>
+      </div>
+    </main>
+  </aside>
+</ContainerSection>

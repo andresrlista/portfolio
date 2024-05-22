@@ -1,0 +1,40 @@
+---
+import NavbarMenuLink from './NavbarMenuLink.astro';
+
+const MENU_ITEMS = [
+  { href: '/', label: 'Home' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav class='flex justify-center w-full'>
+  <div
+    class='fixed
+    z-10
+    w-fill
+    p-2
+    mt-8
+    border
+    bg-color-transparent
+    border-zinc-800
+    rounded-full
+    hover:shadow-lg
+    transition-shadow duration-100 ease-in-out
+    from-zinc-700
+    to-zinc
+    bg-gradient-to-r
+    backdrop-blur-md'
+  >
+    <ul class='inline-flex items-center text-center'>
+      {
+        MENU_ITEMS.map(item => (
+          <li>
+            <NavbarMenuLink {...item} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
