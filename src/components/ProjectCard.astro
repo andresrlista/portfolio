@@ -15,29 +15,34 @@ const { title, description, link, image, linkLabel } = Astro.props;
 <div>
   <a href={link} target='_blank' rel='noopener noreferrer'>
     <div
-      class='border border-gray-200
+      class='border border-gray-700
+      bg-gray-900
     rounded-lg shadow
-    dark:bg-gray-800 dark:border-gray-700
+     dark:border-gray-700
     max-w-sm max-h-[448px] h-[448px]'
     >
       <div
-        class='flex justify-center items-center bg-white rounded-t-lg h-[256px] dark:bg-gray-800'
+        class='flex justify-center items-center bg-gray-700 rounded-t-lg h-[256px] dark:bg-gray-800 p-8'
       >
-        <div class='p-8'>
+        <div>
           <picture>
-            <img class='rounded-t-lg' src={image.src} alt='project image' />
+            <img
+              class='rounded-lg shadow-sm dark:shadow-lg'
+              src={image.src}
+              alt='project image'
+            />
           </picture>
         </div>
       </div>
 
-      <hr class='border-t border-gray-200 dark:border-gray-700' />
+      <hr class='border-t border-gray-800 dark:border-gray-600' />
       <div class='p-5'>
         <h5
-          class='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
+          class='mb-2 text-2xl font-bold tracking-tight text-gray-200 dark:text-gray-100'
         >
           {title}
         </h5>
-        <p class='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+        <p class='mb-3 font-normal text-gray-400 dark:text-gray-400'>
           {description}
         </p>
         <a

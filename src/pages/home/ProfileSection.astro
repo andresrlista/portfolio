@@ -30,11 +30,11 @@ const { id: containerSectionId, class: className, title } = Astro.props;
 <ContainerSection id={containerSectionId} class={className}>
   <aside
     class={`flex flex-col 
-    justify-center content-center 
+    justify-center content-center text-gray-300
     `}
   >
-    <div class='flex justify-center items-center flex-col'>
-      <picture class='mt-24 sm:mt-24'>
+    <div class='flex justify-center items-center flex-col pt-24 lg:pt-0'>
+      <picture>
         <img
           src={profilePhoto.src}
           alt='Andres Lista Profile Photo'
@@ -42,12 +42,12 @@ const { id: containerSectionId, class: className, title } = Astro.props;
         />
       </picture>
       <h1
-        class='text-gray text-4xl mt-8 tracking-wide font-extrabold [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)]'
+        class='text-gray-50 text-4xl mt-8 tracking-wide font-extrabold [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)]'
       >
         Andrés Lista
       </h1>
       <h5
-        class='text-gray text-lg [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)] opacity-70'
+        class='text-gray-300 text-lg [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)] opacity-70'
       >
         Web Developer
       </h5>
@@ -69,8 +69,8 @@ const { id: containerSectionId, class: className, title } = Astro.props;
 
   <aside class='flex justify-center flex-col'>
     <main>
-      <Divider title={title} class='mb-8 w-full' />
-      <div class='flex flex-col justify-center items-center my-4'>
+      <div class='flex flex-col justify-center items-center'>
+        <h5 class='text-xl text-gray-400 my-8'>- About me -</h5>
         <p
           class={`drop-shadow-lg 
             [text-shadow:_0_-1px_6px_rgb(0_0_0_/_80%)] 
