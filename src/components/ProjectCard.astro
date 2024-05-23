@@ -15,19 +15,18 @@ const { title, description, link, image, linkLabel } = Astro.props;
 <div>
   <a href={link} target='_blank' rel='noopener noreferrer'>
     <div
-      class='border border-gray-700
-      bg-gray-900
+      class='bg-gray-900
     rounded-lg shadow
-     dark:border-gray-700
+     dark:border-slate-700
     max-w-sm max-h-[448px] h-[448px]'
     >
       <div
-        class='flex justify-center items-center bg-gray-700 rounded-t-lg h-[256px] dark:bg-gray-800 p-8'
+        class='flex justify-center items-center bg-slate-700 rounded-t-lg h-[256px] dark:bg-slate-800 p-8'
       >
         <div>
-          <picture>
+          <picture class=''>
             <img
-              class='rounded-lg shadow-sm dark:shadow-lg'
+              class='rounded-lg drop-shadow-xl'
               src={image.src}
               alt='project image'
             />
@@ -35,8 +34,7 @@ const { title, description, link, image, linkLabel } = Astro.props;
         </div>
       </div>
 
-      <hr class='border-t border-gray-800 dark:border-gray-600' />
-      <div class='p-5'>
+      <div class='p-6'>
         <h5
           class='mb-2 text-2xl font-bold tracking-tight text-gray-200 dark:text-gray-100'
         >

@@ -15,20 +15,19 @@ import Divider from '../components/Divider.astro';
     title='About me'
     class={`grid grid-cols-1 
     xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2
-    place-items-center max-w-6xl gap-8`}
+    place-items-center max-w-6xl `}
   />
-  <Divider id='experience' title='Experience' class='max-w-4xl pt-32' />
   <ExperienceSection
     title='Experience'
     class=`grid grid-cols-1 
     xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 
-    place-items-center items-center max-w-2xl`
+    place-items-center items-center max-w-3xl mt-16`
   />
-  <Divider id='projects' title='Projects' class='max-w-4xl pt-32' />
+  <Divider id='projects' title='Projects' class='max-w-3xl mt-32 mb-16' />
   <ProjectSection
     title='Projects'
     class={`grid grid-cols-1 
-    sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3
-    place-items-center max-w-6xl w-full gap-8 mt-24`}
+    sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2
+    place-items-center max-w-4xl w-full gap-8 mt-16`}
   />
 </Layout>

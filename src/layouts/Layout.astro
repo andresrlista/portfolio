@@ -1,7 +1,7 @@
 ---
-import Container from '../components/Container.astro';
 import Navbar from '../components/Navbar.astro';
 import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -45,10 +45,11 @@ const { title } = Astro.props;
           font-family: 'Lato', 'Courier New', Courier, monospace;
           background: #13151a;
           color-scheme: dark light;
-          @apply text-sm bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))];
+          @apply text-sm bg-neutral-950 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)];
           scroll-behavior: smooth;
         }
       </style>
     </main>
+    <Footer />
   </body>
 </html>

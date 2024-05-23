@@ -1,6 +1,7 @@
 ---
 // components
 import ContainerSection from '../../components/ContainerSection.astro';
+import Divider from '../../components/Divider.astro';
 import TimeLineExperience from '../../components/TimeLineExperience.astro';
 
 interface Props {
@@ -11,5 +12,6 @@ const { class: className } = Astro.props;
 ---
 
 <ContainerSection class={`${className}`}>
+  <Divider id='experience' title='Experience' class='max-w-4xl mb-24' />
   <TimeLineExperience />
 </ContainerSection>
