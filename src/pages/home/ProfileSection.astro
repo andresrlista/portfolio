@@ -42,12 +42,12 @@ const { id: containerSectionId, class: className, title } = Astro.props;
         />
       </picture>
       <h1
-        class='text-gray-50 text-4xl mt-8 tracking-wide font-extrabold [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)]'
+        class='text-white text-4xl mt-8 tracking-wide font-extrabold [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)]'
       >
         Andrés Lista
       </h1>
       <h5
-        class='text-gray-300 text-lg [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)] opacity-70'
+        class='text-gray-200 text-lg [text-shadow:_0_4px_10px_rgb(0_0_0_/_80%)] opacity-85'
       >
         Web Developer
       </h5>
@@ -70,7 +70,11 @@ const { id: containerSectionId, class: className, title } = Astro.props;
   <aside class='flex justify-center flex-col'>
     <main>
       <div class='flex flex-col justify-center items-center'>
-        <h5 class='text-xl text-gray-400 my-8'>- About me -</h5>
+        <div class='grid grid-cols-3 place-items-center gap-4'>
+          <hr class='w-full border-gray-300 dark:border-gray-700' />
+          <h5 class='text-2xl text-white-400 font-semibold my-4'>About me</h5>
+          <hr class='w-full border-gray-300 dark:border-gray-700' />
+        </div>
         <p
           class={`drop-shadow-lg 
             [text-shadow:_0_-1px_6px_rgb(0_0_0_/_80%)] 
