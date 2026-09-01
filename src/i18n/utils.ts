@@ -22,5 +22,6 @@ export function useTranslations(locale: Locale): Dictionary {
 }
 
 export function localizedPath(locale: Locale): string {
-  return locale === 'en' ? '/' : `/${locale}/`;
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return locale === 'en' ? `${base}/` : `${base}/${locale}/`;
 }

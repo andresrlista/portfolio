@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/utils';
 import type { Dictionary } from '../i18n/en';
+import { localizedPath } from '../i18n/utils';
 import ThemeToggle from './ThemeToggle.astro';
 import LangSwitcher from './LangSwitcher.astro';
 
@@ -25,7 +26,7 @@ const navItems = [
 >
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
     <a
-      href={locale === 'en' ? '/' : '/es/'}
+      href={localizedPath(locale)}
       class="font-mono text-sm font-semibold tracking-tight text-[var(--text)] transition-opacity hover:opacity-70"
       aria-label="Andrés Lista"
     >

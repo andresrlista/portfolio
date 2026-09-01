@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../i18n/utils';
+import { localizedPath } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -14,7 +15,7 @@ const { locale } = Astro.props;
   aria-label="Language"
 >
   <a
-    href="/"
+    href={localizedPath('en')}
     class:list={[
       'rounded px-2 py-1 transition-colors',
       locale === 'en'
@@ -26,7 +27,7 @@ const { locale } = Astro.props;
     EN
   </a>
   <a
-    href="/es/"
+    href={localizedPath('es')}
     class:list={[
       'rounded px-2 py-1 transition-colors',
       locale === 'es'
