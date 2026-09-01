@@ -1,0 +1,33 @@
+---
+import type { Dictionary } from '../i18n/en';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="skills" class="border-t border-[var(--border-subtle)] bg-[var(--bg-subtle)]/40 px-5 py-16 sm:px-8 sm:py-24">
+  <div class="mx-auto max-w-5xl">
+    <SectionHeading kicker={t.skills.kicker} title={t.skills.title} />
+
+    <div class="stagger grid gap-6 sm:grid-cols-3">
+      {
+        t.skills.groups.map((group) => (
+          <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-6">
+            <h3 class="text-sm font-semibold text-[var(--text)]">{group.label}</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span class="rounded-full border border-[var(--border)] bg-[var(--bg-subtle)] px-3 py-1 font-mono text-xs text-[var(--text-muted)]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
