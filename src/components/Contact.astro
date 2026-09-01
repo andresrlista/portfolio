@@ -1,0 +1,68 @@
+---
+import type { Dictionary } from '../i18n/en';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+const email = 'andresrlista@gmail.com';
+const linkedin = 'https://www.linkedin.com/in/andres-lista/';
+---
+
+<section id="contact" class="border-t border-[var(--border-subtle)] px-5 py-16 sm:px-8 sm:py-24">
+  <div class="reveal mx-auto max-w-5xl">
+    <div class="rounded-2xl border border-[var(--border)] bg-[var(--bg-elevated)] px-6 py-14 text-center sm:px-16">
+      <p class="font-mono text-xs font-medium uppercase tracking-widest text-[var(--accent)]">
+        {t.contact.kicker}
+      </p>
+      <h2 class="mx-auto mt-3 max-w-xl text-2xl font-semibold tracking-tight text-[var(--text)] sm:text-3xl">
+        {t.contact.title}
+      </h2>
+      <p class="mx-auto mt-3 max-w-md text-base text-[var(--text-muted)]">
+        {t.contact.description}
+      </p>
+
+      <div class="mt-8 flex justify-center">
+        <a
+          href={`mailto:${email}`}
+          class="inline-flex items-center gap-2 rounded-md bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          {t.contact.ctaEmail}
+        </a>
+      </div>
+
+      <dl class="mx-auto mt-10 flex max-w-md flex-col items-center gap-3 border-t border-[var(--border-subtle)] pt-8 text-sm sm:flex-row sm:justify-center sm:gap-8">
+        <div class="flex items-center gap-2">
+          <dt class="text-[var(--text-muted)]">{t.contact.emailLabel}:</dt>
+          <dd>
+            <a href={`mailto:${email}`} class="font-mono text-[var(--text)] transition-colors hover:text-[var(--accent)]">
+              {email}
+            </a>
+          </dd>
+        </div>
+        <div class="flex items-center gap-2">
+          <dt class="text-[var(--text-muted)]">{t.contact.locationLabel}:</dt>
+          <dd class="text-[var(--text)]">Winter Garden, FL</dd>
+        </div>
+        <div class="flex items-center gap-2">
+          <dt class="text-[var(--text-muted)]">{t.contact.linkedinLabel}:</dt>
+          <dd>
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--text)] transition-colors hover:text-[var(--accent)]"
+            >
+              {t.contact.linkedinLabel}
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

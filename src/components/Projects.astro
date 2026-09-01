@@ -1,0 +1,49 @@
+---
+import type { Dictionary } from '../i18n/en';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="projects" class="border-t border-[var(--border-subtle)] px-5 py-16 sm:px-8 sm:py-24">
+  <div class="mx-auto max-w-5xl">
+    <SectionHeading kicker={t.projects.kicker} title={t.projects.title} />
+
+    <div class="stagger grid gap-5 sm:grid-cols-2">
+      {
+        t.projects.items.map((project) => (
+          <article class="group rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_hsl(var(--shadow-color)/0.12)]">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold text-[var(--text)]">{project.name}</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[var(--text-muted)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+            <p class="mt-1 font-mono text-xs text-[var(--text-muted)]">
+              {project.org} · {project.location}
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-[var(--text-muted)] sm:text-[15px]">
+              {project.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

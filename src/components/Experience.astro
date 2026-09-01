@@ -1,0 +1,42 @@
+---
+import type { Dictionary } from '../i18n/en';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="experience" class="border-t border-[var(--border-subtle)] bg-[var(--bg-subtle)]/40 px-5 py-16 sm:px-8 sm:py-24">
+  <div class="mx-auto max-w-5xl">
+    <SectionHeading kicker={t.experience.kicker} title={t.experience.title} />
+
+    <div class="stagger space-y-6">
+      {
+        t.experience.items.map((job) => (
+          <article class="rounded-xl border border-[var(--border)] bg-[var(--bg-elevated)] p-6 transition-shadow duration-300 hover:shadow-[0_8px_30px_hsl(var(--shadow-color)/0.12)] sm:p-8">
+            <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+              <h3 class="text-lg font-semibold text-[var(--text)]">
+                {job.role} · <span class="text-[var(--accent)]">{job.company}</span>
+              </h3>
+              <p class="shrink-0 font-mono text-sm text-[var(--text-muted)]">{job.period}</p>
+            </div>
+            <p class="mt-1 text-sm text-[var(--text-muted)]">
+              {job.mode} · {job.location}
+            </p>
+            <ul class="mt-4 space-y-2.5">
+              {job.bullets.map((bullet) => (
+                <li class="flex gap-3 text-sm leading-relaxed text-[var(--text-muted)] sm:text-[15px]">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--text-muted)]" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
